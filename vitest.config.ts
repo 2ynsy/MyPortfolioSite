@@ -7,7 +7,8 @@ export default defineVitestConfig({
     environment: "nuxt",
     setupFiles: ["./utils/image.ts"],
     coverage: {
-      reporter: ["text", "html"],
+      reporter: ["text", "html", "json-summary", "json"],
+      reportOnFailure: true,
       provider: "istanbul",
       reportsDirectory: "./coverage",
     },
