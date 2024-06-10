@@ -1,17 +1,17 @@
 <template>
   <form class="search-form" @submit.prevent="submitSearch">
-    <input type="text" v-model="searchQuery" placeholder="Search..." />
+    <input type="text" v-model="searchText" placeholder="Search..." />
     <button type="submit"><img :src="iconSearchSvg"</button>
   </form>
 </template>
 
 <script setup lang="ts">
-const searchQuery = ref<string>("");
+const searchText = ref<string>("");
+const emit = defineEmits();
 
 const submitSearch = () => {
-  if (searchQuery.value.trim() !== "") {
-    // ここに検索処理を追加するか、イベントを発火させて親コンポーネントで処理するなど、適切な検索処理を行ってください。
-    console.log("Search query:", searchQuery.value);
+  if (searchText.value.trim() !== "") {
+    emit("search", searchText.value.trim());
   }
 };
 </script>
