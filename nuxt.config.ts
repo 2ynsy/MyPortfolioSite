@@ -16,4 +16,5 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   css: ["@/assets/reset.scss", "@/assets/main.scss"],
+  modules: ["@nuxt/test-utils/module"],
 });
